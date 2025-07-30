@@ -8,7 +8,7 @@ const Table = () => {
 
   const fetchCases = async () => {
     try {
-      const res = await axios.get("http://localhost:5002/api/cases/getAllcases", {
+      const res = await axios.get("https://lawfirm-backend-production.up.railway.app/api/cases/getAllcases", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -21,7 +21,7 @@ const Table = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5002/api/cases/delete/${id}`, {
+      await axios.delete(`https://lawfirm-backend-production.up.railway.app/api/cases/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchCases();
@@ -33,7 +33,7 @@ const Table = () => {
   const handleStatusChange = async (id, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:5002/api/cases/update/${id}`,
+        `https://lawfirm-backend-production.up.railway.app/api/cases/update/${id}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -61,7 +61,7 @@ const Table = () => {
 
     try {
       await axios.put(
-        `http://localhost:5002/api/cases/assign/${caseId}`,
+        `https://lawfirm-backend-production.up.railway.app/api/cases/assign/${caseId}`,
         { lawyerName },
         { headers: { Authorization: `Bearer ${token}` } }
       );

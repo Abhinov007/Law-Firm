@@ -7,7 +7,7 @@ const UnverifiedUsersTable = () => {
   const fetchUnverifiedUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5002/api/auth/unverified", {
+      const res = await axios.get("https://lawfirm-backend-production.up.railway.app/api/auth/unverified", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -21,7 +21,7 @@ const UnverifiedUsersTable = () => {
   const handleVerify = async (userId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(`http://localhost:5002/api/auth/verify/${userId}`, {}, {
+      await axios.put(`https://lawfirm-backend-production.up.railway.app/api/auth/verify/${userId}`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
