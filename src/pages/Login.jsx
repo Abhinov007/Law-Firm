@@ -17,7 +17,7 @@ const Login = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://lawfirm-backend-production.up.railway.app/api/auth/login', values);
+      const response = await axios.post('https://lawfirm-backend-production.up.railway.app/api/auth/login/', values);
 
       if (response.status === 200) {
         const { token, role } = response.data;
