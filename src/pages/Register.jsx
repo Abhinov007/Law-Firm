@@ -20,7 +20,7 @@ const Register = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("http://localhost:5002/api/auth/register", form);
+          const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, form);
           localStorage.setItem("token", res.data.token); 
           setMessage("Signup successful!");
           if(res.status===201){
